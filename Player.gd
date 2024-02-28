@@ -28,3 +28,4 @@ func _process(delta):
 		#velocity = velocity.normalized() * speed
 	#position += velocity * delta
 
+	# Old system moved your position, which let you literally clip through walls
