@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwoosf5px6vtg"]
+[gd_scene load_steps=6 format=3 uid="uid://dwoosf5px6vtg"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_0nvdm"]
 [ext_resource type="Texture2D" uid="uid://rgc2fqjbhy16" path="res://icon.svg" id="2_opab0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_thn1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kopo1"]
 size = Vector2(120, 123)
@@ -17,7 +19,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_thn1k")
+gravity_scale = 0.0
 script = ExtResource("1_0nvdm")
 metadata/_edit_group_ = true
 
