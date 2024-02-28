@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 @export var speed = 400
 
@@ -22,3 +22,4 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
+
