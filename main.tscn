@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://qypn2vkcfaom"]
+[gd_scene load_steps=2 format=3 uid="uid://qypn2vkcfaom"]
+
+[ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://Player.tscn" id="1_vqkut"]
 
 [node name="Main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_vqkut")]
+position = Vector2(467, 286)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 705.0
+offset_top = 142.0
+offset_right = 1262.0
+offset_bottom = 839.0
