@@ -6,6 +6,7 @@
 
 [node name="barriers" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_4cucj")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2uyjh")
