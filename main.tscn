@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://qypn2vkcfaom"]
+[gd_scene load_steps=9 format=3 uid="uid://qypn2vkcfaom"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_kkaoj"]
 [ext_resource type="Texture2D" uid="uid://b17e0tqab7iil" path="res://Assets/ConstrctCondrmA5background.jpg" id="2_smbba"]
-[ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://player.tscn" id="3_jyohp"]
+[ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://Player.tscn" id="3_jyohp"]
 [ext_resource type="PackedScene" uid="uid://c0ctdftvwlg24" path="res://suburb_plot.tscn" id="4_5xd6p"]
-[ext_resource type="PackedScene" uid="uid://bnpbmyco23y2a" path="res://plot.tscn" id="4_jmd5o"]
 [ext_resource type="PackedScene" uid="uid://babc0138xpgef" path="res://water_plot.tscn" id="5_xflt3"]
+[ext_resource type="PackedScene" uid="uid://b8bvt802qke5s" path="res://downtown_plot.tscn" id="6_5mlva"]
+[ext_resource type="PackedScene" uid="uid://c2trohgsbe82l" path="res://mountain_plot.tscn" id="7_2drmf"]
+[ext_resource type="PackedScene" uid="uid://c8e8vai4js1l5" path="res://store.tscn" id="8_vrskq"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kkaoj")
@@ -20,44 +22,89 @@ position = Vector2(957, 540)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="plot" parent="." instance=ExtResource("4_jmd5o")]
-
-[node name="suburbPlot" parent="plot" instance=ExtResource("4_5xd6p")]
+[node name="suburbPlot" parent="." groups=["Plots"] instance=ExtResource("4_5xd6p")]
 position = Vector2(40, 1039)
 
-[node name="suburbPlot2" parent="plot" instance=ExtResource("4_5xd6p")]
+[node name="suburbPlot2" parent="." groups=["Plots"] instance=ExtResource("4_5xd6p")]
 position = Vector2(317, 1039)
 
-[node name="suburbPlot3" parent="plot" instance=ExtResource("4_5xd6p")]
+[node name="suburbPlot3" parent="." groups=["Plots"] instance=ExtResource("4_5xd6p")]
 position = Vector2(168, 1039)
 
-[node name="suburbPlot4" parent="plot" instance=ExtResource("4_5xd6p")]
+[node name="suburbPlot4" parent="." groups=["Plots"] instance=ExtResource("4_5xd6p")]
 position = Vector2(480, 1037)
 
-[node name="suburbPlot5" parent="plot" instance=ExtResource("4_5xd6p")]
+[node name="suburbPlot5" parent="." groups=["Plots"] instance=ExtResource("4_5xd6p")]
 position = Vector2(629, 1035)
 
-[node name="suburbPlot6" parent="plot" instance=ExtResource("4_5xd6p")]
+[node name="suburbPlot6" parent="." groups=["Plots"] instance=ExtResource("4_5xd6p")]
 position = Vector2(781, 1035)
 
-[node name="waterPlot" parent="plot" instance=ExtResource("5_xflt3")]
+[node name="waterPlot" parent="." groups=["Plots"] instance=ExtResource("5_xflt3")]
 position = Vector2(1712, 1048)
 
-[node name="waterPlot2" parent="plot" instance=ExtResource("5_xflt3")]
+[node name="waterPlot2" parent="." groups=["Plots"] instance=ExtResource("5_xflt3")]
 position = Vector2(1581, 1046)
 
-[node name="waterPlot3" parent="plot" instance=ExtResource("5_xflt3")]
+[node name="waterPlot3" parent="." groups=["Plots"] instance=ExtResource("5_xflt3")]
 position = Vector2(1421, 1048)
 
-[node name="waterPlot4" parent="plot" instance=ExtResource("5_xflt3")]
+[node name="waterPlot4" parent="." groups=["Plots"] instance=ExtResource("5_xflt3")]
 position = Vector2(1272, 1051)
 
-[node name="waterPlot5" parent="plot" instance=ExtResource("5_xflt3")]
+[node name="waterPlot5" parent="." groups=["Plots"] instance=ExtResource("5_xflt3")]
 position = Vector2(1149, 1051)
 
-[node name="waterPlot6" parent="plot" instance=ExtResource("5_xflt3")]
+[node name="waterPlot6" parent="." groups=["Plots"] instance=ExtResource("5_xflt3")]
 position = Vector2(1839, 1046)
 
-[connection signal="build" from="plot" to="." method="_on_plot_build"]
-[connection signal="build" from="plot/suburbPlot" to="." method="_on_suburb_plot_build"]
-[connection signal="area_entered" from="plot/suburbPlot2" to="." method="_on_suburb_plot_2_area_entered"]
+[node name="downtownPlot" parent="." instance=ExtResource("6_5mlva")]
+position = Vector2(37, 37)
+
+[node name="downtownPlot2" parent="." instance=ExtResource("6_5mlva")]
+position = Vector2(165, 41)
+
+[node name="downtownPlot3" parent="." instance=ExtResource("6_5mlva")]
+position = Vector2(572, 36)
+
+[node name="downtownPlot4" parent="." instance=ExtResource("6_5mlva")]
+position = Vector2(436, 36)
+
+[node name="downtownPlot5" parent="." instance=ExtResource("6_5mlva")]
+position = Vector2(303, 36)
+
+[node name="downtownPlot6" parent="." instance=ExtResource("6_5mlva")]
+position = Vector2(732, 37)
+
+[node name="mountainPlot" parent="." instance=ExtResource("7_2drmf")]
+position = Vector2(1816, 31)
+
+[node name="mountainPlot2" parent="." instance=ExtResource("7_2drmf")]
+position = Vector2(1668, 31)
+
+[node name="mountainPlot3" parent="." instance=ExtResource("7_2drmf")]
+position = Vector2(1540, 29)
+
+[node name="mountainPlot4" parent="." instance=ExtResource("7_2drmf")]
+position = Vector2(1404, 34)
+
+[node name="mountainPlot5" parent="." instance=ExtResource("7_2drmf")]
+position = Vector2(1266, 38)
+
+[node name="mountainPlot6" parent="." instance=ExtResource("7_2drmf")]
+position = Vector2(1140, 36)
+
+[node name="woodStore" parent="." instance=ExtResource("8_vrskq")]
+position = Vector2(39, 505)
+
+[node name="stoneStore" parent="." instance=ExtResource("8_vrskq")]
+position = Vector2(38, 623)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="build" from="suburbPlot" to="." method="plot_built"]
+[connection signal="area_entered" from="woodStore" to="." method="_on_wood_store_area_entered"]
+[connection signal="area_entered" from="stoneStore" to="." method="_on_wood_store_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
