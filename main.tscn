@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_kkaoj"]
 [ext_resource type="Texture2D" uid="uid://b17e0tqab7iil" path="res://Assets/ConstrctCondrmA5background.jpg" id="2_smbba"]
-[ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://Player.tscn" id="3_jyohp"]
+[ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://player.tscn" id="3_jyohp"]
 [ext_resource type="PackedScene" uid="uid://c0ctdftvwlg24" path="res://suburb_plot.tscn" id="4_5xd6p"]
 [ext_resource type="PackedScene" uid="uid://babc0138xpgef" path="res://water_plot.tscn" id="5_xflt3"]
 [ext_resource type="PackedScene" uid="uid://b8bvt802qke5s" path="res://downtown_plot.tscn" id="6_5mlva"]
@@ -105,6 +105,7 @@ wait_time = 3.0
 autostart = true
 
 [connection signal="build" from="suburbPlot" to="." method="plot_built"]
+[connection signal="build" from="suburbPlot2" to="." method="plot_built"]
 [connection signal="area_entered" from="woodStore" to="." method="_on_wood_store_area_entered"]
-[connection signal="area_entered" from="stoneStore" to="." method="_on_wood_store_area_entered"]
+[connection signal="area_entered" from="stoneStore" to="." method="_on_stone_store_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
