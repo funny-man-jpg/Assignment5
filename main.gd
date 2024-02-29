@@ -12,7 +12,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	money += 2 * houseCount
+	money += 1 * houseCount
+	print(money)
 
 
 func _on_plot_build():
