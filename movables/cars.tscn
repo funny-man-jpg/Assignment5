@@ -11,6 +11,8 @@ size = Vector2(259, 127)
 
 [node name="cars" type="RigidBody2D"]
 rotation = 1.56897
+collision_layer = 2
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_7541a")
 max_contacts_reported = 1
 contact_monitor = true

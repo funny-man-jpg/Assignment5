@@ -68,34 +68,34 @@ position = Vector2(37, 37)
 position = Vector2(165, 41)
 
 [node name="downtownPlot3" parent="." instance=ExtResource("6_5mlva")]
-position = Vector2(572, 36)
+position = Vector2(608, 32)
 
 [node name="downtownPlot4" parent="." instance=ExtResource("6_5mlva")]
-position = Vector2(436, 36)
+position = Vector2(464, 32)
 
 [node name="downtownPlot5" parent="." instance=ExtResource("6_5mlva")]
 position = Vector2(303, 36)
 
 [node name="downtownPlot6" parent="." instance=ExtResource("6_5mlva")]
-position = Vector2(732, 37)
+position = Vector2(752, 32)
 
 [node name="mountainPlot" parent="." instance=ExtResource("7_2drmf")]
-position = Vector2(1816, 31)
+position = Vector2(1864, 32)
 
 [node name="mountainPlot2" parent="." instance=ExtResource("7_2drmf")]
-position = Vector2(1668, 31)
+position = Vector2(1736, 32)
 
 [node name="mountainPlot3" parent="." instance=ExtResource("7_2drmf")]
-position = Vector2(1540, 29)
+position = Vector2(1608, 32)
 
 [node name="mountainPlot4" parent="." instance=ExtResource("7_2drmf")]
-position = Vector2(1404, 34)
+position = Vector2(1472, 32)
 
 [node name="mountainPlot5" parent="." instance=ExtResource("7_2drmf")]
-position = Vector2(1266, 38)
+position = Vector2(1344, 32)
 
 [node name="mountainPlot6" parent="." instance=ExtResource("7_2drmf")]
-position = Vector2(1140, 36)
+position = Vector2(1216, 32)
 
 [node name="woodStore" parent="." instance=ExtResource("8_vrskq")]
 position = Vector2(93, 561)
@@ -106,6 +106,8 @@ storeType = 1
 
 [node name="Player" parent="." instance=ExtResource("3_jyohp")]
 position = Vector2(957, 540)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
