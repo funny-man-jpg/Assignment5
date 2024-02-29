@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c2trohgsbe82l"]
 
-[ext_resource type="PackedScene" uid="uid://bnpbmyco23y2a" path="res://plot.tscn" id="1_rdw4g"]
+[ext_resource type="PackedScene" uid="uid://bnpbmyco23y2a" path="res://statics/plots/plot.tscn" id="1_rdw4g"]
 
 [node name="mountainPlot" instance=ExtResource("1_rdw4g")]
 houseType = 4

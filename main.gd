@@ -1,5 +1,6 @@
 extends Node
 
+@export var cars: PackedScene
 var money = 10
 var regularHouseCount = 0
 var doubleHouseCount = 0
@@ -48,10 +49,11 @@ func plot_built(houseType):
 	print(regularHouseCount)
 
 
-func _on_wood_store_area_entered(area):
+func _on_wood_store_body_entered(area):
 	if money > 0:
 		money -= 1
 		woodCount += 2
+		$woodStore.buy()
 
 
 func _on_timer_timeout():
@@ -64,7 +66,22 @@ func _on_timer_timeout():
 	print(buildable)
 
 
-func _on_stone_store_area_entered(area):
+func _on_stone_store_body_entered(area):
 	if money > 1:
 		money -= 2
 		stoneCount += 1
+		$stoneStore.buy()
+
+func stun():
+	$Player.hitByCar()
+
+
+func _on_car_timer_timeout():
+	var car = cars.instantiate()
+	car.connect("hit", stun)
+	# taken from godot tutorial
+	var car_spawn_location = $carPath/carSpawn
+	car_spawn_location.progress_ratio = randf()
+	car.position = car_spawn_location.position
+	var direction = car_spawn_location.rotation + PI / 2
+	add_child(car)

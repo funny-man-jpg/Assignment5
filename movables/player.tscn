@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwoosf5px6vtg"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_0nvdm"]
+[ext_resource type="Script" path="res://movables/Player.gd" id="1_0nvdm"]
 [ext_resource type="Texture2D" uid="uid://bdayeosask1x4" path="res://Assets/player/BUILD/0.png" id="2_yek0c"]
 [ext_resource type="Texture2D" uid="uid://c06c100rkcxy2" path="res://Assets/player/BUILD/1.png" id="3_wc7fw"]
 [ext_resource type="Texture2D" uid="uid://cdgqwdljii4dq" path="res://Assets/player/BUILD/2.png" id="4_fw66h"]
@@ -50,7 +50,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="RigidBody2D"]
 script = ExtResource("1_0nvdm")
 metadata/_edit_group_ = true
 
@@ -63,3 +63,9 @@ position = Vector2(0, 16.5)
 scale = Vector2(1, 0.334)
 sprite_frames = SubResource("SpriteFrames_e0qfg")
 animation = &"walk"
+
+[node name="stunTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="stunTimer" to="." method="_on_stun_timer_timeout"]

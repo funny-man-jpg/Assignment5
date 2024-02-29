@@ -1,22 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://qypn2vkcfaom"]
+[gd_scene load_steps=11 format=3 uid="uid://qypn2vkcfaom"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_kkaoj"]
+[ext_resource type="PackedScene" uid="uid://cdmuekfht0sol" path="res://movables/cars.tscn" id="2_3a1er"]
 [ext_resource type="Texture2D" uid="uid://b17e0tqab7iil" path="res://Assets/ConstrctCondrmA5background.jpg" id="2_smbba"]
-[ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://Player.tscn" id="3_jyohp"]
-[ext_resource type="PackedScene" uid="uid://c0ctdftvwlg24" path="res://suburb_plot.tscn" id="4_5xd6p"]
-[ext_resource type="PackedScene" uid="uid://babc0138xpgef" path="res://water_plot.tscn" id="5_xflt3"]
-[ext_resource type="PackedScene" uid="uid://b8bvt802qke5s" path="res://downtown_plot.tscn" id="6_5mlva"]
-[ext_resource type="PackedScene" uid="uid://c2trohgsbe82l" path="res://mountain_plot.tscn" id="7_2drmf"]
-[ext_resource type="PackedScene" uid="uid://c8e8vai4js1l5" path="res://store.tscn" id="8_vrskq"]
+[ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://movables/player.tscn" id="3_jyohp"]
+[ext_resource type="PackedScene" uid="uid://c0ctdftvwlg24" path="res://statics/plots/suburb_plot.tscn" id="4_5xd6p"]
+[ext_resource type="PackedScene" uid="uid://babc0138xpgef" path="res://statics/plots/water_plot.tscn" id="5_xflt3"]
+[ext_resource type="PackedScene" uid="uid://b8bvt802qke5s" path="res://statics/plots/downtown_plot.tscn" id="6_5mlva"]
+[ext_resource type="PackedScene" uid="uid://c2trohgsbe82l" path="res://statics/plots/mountain_plot.tscn" id="7_2drmf"]
+[ext_resource type="PackedScene" uid="uid://c8e8vai4js1l5" path="res://statics/store.tscn" id="8_vrskq"]
 
 [sub_resource type="Curve2D" id="Curve2D_rr56s"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 824, 0, 0, 0, 0, 0, 1096, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 824, 0, 0, 0, 0, 0, 824, 0, 0, 0, 0, 0, 1104, 0)
 }
-point_count = 2
+point_count = 3
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kkaoj")
+cars = ExtResource("2_3a1er")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1922.0
@@ -137,15 +139,41 @@ autostart = true
 
 [node name="carTimer" type="Timer" parent="."]
 wait_time = 4.0
+autostart = true
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="carPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_rr56s")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(824, 0)
+[node name="carSpawn" type="PathFollow2D" parent="carPath"]
+position = Vector2(823.803, 0)
 
+[connection signal="area_entered" from="suburbPlot" to="suburbPlot" method="_on_area_entered"]
 [connection signal="build" from="suburbPlot" to="." method="plot_built"]
+[connection signal="area_entered" from="suburbPlot2" to="suburbPlot2" method="_on_area_entered"]
 [connection signal="build" from="suburbPlot2" to="." method="plot_built"]
-[connection signal="area_entered" from="woodStore" to="." method="_on_wood_store_area_entered"]
-[connection signal="area_entered" from="stoneStore" to="." method="_on_stone_store_area_entered"]
+[connection signal="area_entered" from="suburbPlot3" to="suburbPlot3" method="_on_area_entered"]
+[connection signal="area_entered" from="suburbPlot4" to="suburbPlot4" method="_on_area_entered"]
+[connection signal="area_entered" from="suburbPlot5" to="suburbPlot5" method="_on_area_entered"]
+[connection signal="area_entered" from="suburbPlot6" to="suburbPlot6" method="_on_area_entered"]
+[connection signal="area_entered" from="waterPlot" to="waterPlot" method="_on_area_entered"]
+[connection signal="area_entered" from="waterPlot2" to="waterPlot2" method="_on_area_entered"]
+[connection signal="area_entered" from="waterPlot3" to="waterPlot3" method="_on_area_entered"]
+[connection signal="area_entered" from="waterPlot4" to="waterPlot4" method="_on_area_entered"]
+[connection signal="area_entered" from="waterPlot5" to="waterPlot5" method="_on_area_entered"]
+[connection signal="area_entered" from="waterPlot6" to="waterPlot6" method="_on_area_entered"]
+[connection signal="area_entered" from="downtownPlot" to="downtownPlot" method="_on_area_entered"]
+[connection signal="area_entered" from="downtownPlot2" to="downtownPlot2" method="_on_area_entered"]
+[connection signal="area_entered" from="downtownPlot3" to="downtownPlot3" method="_on_area_entered"]
+[connection signal="area_entered" from="downtownPlot4" to="downtownPlot4" method="_on_area_entered"]
+[connection signal="area_entered" from="downtownPlot5" to="downtownPlot5" method="_on_area_entered"]
+[connection signal="area_entered" from="downtownPlot6" to="downtownPlot6" method="_on_area_entered"]
+[connection signal="area_entered" from="mountainPlot" to="mountainPlot" method="_on_area_entered"]
+[connection signal="area_entered" from="mountainPlot2" to="mountainPlot2" method="_on_area_entered"]
+[connection signal="area_entered" from="mountainPlot3" to="mountainPlot3" method="_on_area_entered"]
+[connection signal="area_entered" from="mountainPlot4" to="mountainPlot4" method="_on_area_entered"]
+[connection signal="area_entered" from="mountainPlot5" to="mountainPlot5" method="_on_area_entered"]
+[connection signal="area_entered" from="mountainPlot6" to="mountainPlot6" method="_on_area_entered"]
+[connection signal="body_entered" from="woodStore" to="." method="_on_wood_store_body_entered"]
+[connection signal="body_entered" from="stoneStore" to="." method="_on_stone_store_body_entered"]
 [connection signal="timeout" from="moneyTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="carTimer" to="." method="_on_car_timer_timeout"]

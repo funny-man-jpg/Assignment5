@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b8bvt802qke5s"]
 
-[ext_resource type="PackedScene" uid="uid://bnpbmyco23y2a" path="res://plot.tscn" id="1_m5d8r"]
+[ext_resource type="PackedScene" uid="uid://bnpbmyco23y2a" path="res://statics/plots/plot.tscn" id="1_m5d8r"]
 
 [node name="downtownPlot" instance=ExtResource("1_m5d8r")]
 houseType = 3

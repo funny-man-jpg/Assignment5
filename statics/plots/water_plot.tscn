@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://babc0138xpgef"]
 
-[ext_resource type="PackedScene" uid="uid://bnpbmyco23y2a" path="res://plot.tscn" id="1_srcld"]
+[ext_resource type="PackedScene" uid="uid://bnpbmyco23y2a" path="res://statics/plots/plot.tscn" id="1_srcld"]
 
 [node name="waterPlot" instance=ExtResource("1_srcld")]
 houseType = 2
