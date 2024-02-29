@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwoosf5px6vtg"]
+[gd_scene load_steps=13 format=3 uid="uid://dwoosf5px6vtg"]
 
 [ext_resource type="Script" path="res://movables/Player.gd" id="1_0nvdm"]
 [ext_resource type="Texture2D" uid="uid://bdayeosask1x4" path="res://Assets/player/BUILD/0.png" id="2_yek0c"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bmiqnavtr6pxg" path="res://Assets/player/BUILD/5.png" id="7_nd3r6"]
 [ext_resource type="Texture2D" uid="uid://bgmw2phji8u" path="res://Assets/player/Walk/1.png" id="8_f27mi"]
 [ext_resource type="Texture2D" uid="uid://x3isfbnxt06g" path="res://Assets/player/Walk/Untitled.png" id="9_nlpnw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tvm48"]
+bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kopo1"]
 size = Vector2(102, 123)
@@ -51,6 +54,7 @@ animations = [{
 }]
 
 [node name="Player" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_tvm48")
 script = ExtResource("1_0nvdm")
 metadata/_edit_group_ = true
 
