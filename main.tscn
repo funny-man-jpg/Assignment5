@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://qypn2vkcfaom"]
+[gd_scene load_steps=6 format=3 uid="uid://qypn2vkcfaom"]
 
-[ext_resource type="Texture2D" uid="uid://c1nnq4p6thwya" path="res://Assets/gameBoard.png" id="1_61o5k"]
 [ext_resource type="Script" path="res://main.gd" id="1_kkaoj"]
+[ext_resource type="Texture2D" uid="uid://b17e0tqab7iil" path="res://Assets/ConstrctCondrmA5background.jpg" id="2_smbba"]
 [ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://player.tscn" id="3_jyohp"]
+[ext_resource type="PackedScene" uid="uid://c0ctdftvwlg24" path="res://suburb_plot.tscn" id="4_5xd6p"]
+[ext_resource type="PackedScene" uid="uid://babc0138xpgef" path="res://water_plot.tscn" id="5_xflt3"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kkaoj")
@@ -10,9 +12,45 @@ script = ExtResource("1_kkaoj")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1922.0
 offset_bottom = 1080.0
-texture = ExtResource("1_61o5k")
+texture = ExtResource("2_smbba")
 
 [node name="Player" parent="." instance=ExtResource("3_jyohp")]
 position = Vector2(957, 540)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="suburbPlot" parent="." instance=ExtResource("4_5xd6p")]
+position = Vector2(40, 1039)
+
+[node name="suburbPlot2" parent="." instance=ExtResource("4_5xd6p")]
+position = Vector2(317, 1039)
+
+[node name="suburbPlot3" parent="." instance=ExtResource("4_5xd6p")]
+position = Vector2(168, 1039)
+
+[node name="suburbPlot4" parent="." instance=ExtResource("4_5xd6p")]
+position = Vector2(480, 1037)
+
+[node name="suburbPlot5" parent="." instance=ExtResource("4_5xd6p")]
+position = Vector2(629, 1035)
+
+[node name="suburbPlot6" parent="." instance=ExtResource("4_5xd6p")]
+position = Vector2(781, 1035)
+
+[node name="waterPlot" parent="." instance=ExtResource("5_xflt3")]
+position = Vector2(1712, 1048)
+
+[node name="waterPlot2" parent="." instance=ExtResource("5_xflt3")]
+position = Vector2(1581, 1046)
+
+[node name="waterPlot3" parent="." instance=ExtResource("5_xflt3")]
+position = Vector2(1421, 1048)
+
+[node name="waterPlot4" parent="." instance=ExtResource("5_xflt3")]
+position = Vector2(1272, 1051)
+
+[node name="waterPlot5" parent="." instance=ExtResource("5_xflt3")]
+position = Vector2(1149, 1051)
+
+[node name="waterPlot6" parent="." instance=ExtResource("5_xflt3")]
+position = Vector2(1839, 1046)

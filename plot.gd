@@ -1,19 +1,18 @@
-extends Node
+extends Area2D
 
-var money = 0
-var houseCount = 0
-var woodCount = 0
-var stoneCount = 0
+signal build
+@export var houseType = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$AnimatedSprite2D.set_frame(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	money += 2 * houseCount
+	pass
 
 
-func _on_plot_build():
-	houseCount += 1
+func _on_area_entered(area):
+	build.emit()
+	$AnimatedSprite2D.set_frame(1)
