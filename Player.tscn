@@ -1,35 +1,65 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwoosf5px6vtg"]
+[gd_scene load_steps=12 format=3 uid="uid://dwoosf5px6vtg"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_0nvdm"]
-[ext_resource type="Texture2D" uid="uid://rgc2fqjbhy16" path="res://icon.svg" id="2_opab0"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_thn1k"]
+[ext_resource type="Texture2D" uid="uid://bdayeosask1x4" path="res://Assets/player/BUILD/0.png" id="2_yek0c"]
+[ext_resource type="Texture2D" uid="uid://c06c100rkcxy2" path="res://Assets/player/BUILD/1.png" id="3_wc7fw"]
+[ext_resource type="Texture2D" uid="uid://cdgqwdljii4dq" path="res://Assets/player/BUILD/2.png" id="4_fw66h"]
+[ext_resource type="Texture2D" uid="uid://rv1u20j244vv" path="res://Assets/player/BUILD/3.png" id="5_pev7o"]
+[ext_resource type="Texture2D" uid="uid://w800h8m4b2uo" path="res://Assets/player/BUILD/4.png" id="6_jgb4v"]
+[ext_resource type="Texture2D" uid="uid://bmiqnavtr6pxg" path="res://Assets/player/BUILD/5.png" id="7_nd3r6"]
+[ext_resource type="Texture2D" uid="uid://bgmw2phji8u" path="res://Assets/player/Walk/1.png" id="8_f27mi"]
+[ext_resource type="Texture2D" uid="uid://x3isfbnxt06g" path="res://Assets/player/Walk/Untitled.png" id="9_nlpnw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kopo1"]
-size = Vector2(120, 123)
+size = Vector2(102, 123)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e0qfg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_opab0")
+"texture": ExtResource("2_yek0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wc7fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fw66h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pev7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jgb4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nd3r6")
 }],
 "loop": true,
-"name": &"default",
+"name": &"build",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_f27mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nlpnw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
 }]
 
-[node name="Player" type="RigidBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_thn1k")
-gravity_scale = 0.0
+[node name="Player" type="Area2D"]
 script = ExtResource("1_0nvdm")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(-2, 0.5)
 shape = SubResource("RectangleShape2D_kopo1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 16.5)
+scale = Vector2(1, 0.334)
 sprite_frames = SubResource("SpriteFrames_e0qfg")
-
-[node name="Camera2D" type="Camera2D" parent="."]
+animation = &"walk"

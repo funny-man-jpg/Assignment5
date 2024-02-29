@@ -1,56 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://qypn2vkcfaom"]
+[gd_scene load_steps=4 format=3 uid="uid://qypn2vkcfaom"]
 
 [ext_resource type="Texture2D" uid="uid://c1nnq4p6thwya" path="res://Assets/gameBoard.png" id="1_61o5k"]
-[ext_resource type="PackedScene" uid="uid://c5t72gurcjaxs" path="res://barriers.tscn" id="3_5eas0"]
+[ext_resource type="Script" path="res://main.gd" id="1_kkaoj"]
 [ext_resource type="PackedScene" uid="uid://dwoosf5px6vtg" path="res://player.tscn" id="3_jyohp"]
-[ext_resource type="Texture2D" uid="uid://rgc2fqjbhy16" path="res://icon.svg" id="4_tx2w7"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_t6pq5"]
-radius = 89.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_v72j1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_tx2w7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_kkaoj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 2000.0
-offset_bottom = 1996.0
+offset_right = 1922.0
+offset_bottom = 1080.0
 texture = ExtResource("1_61o5k")
 
-[node name="barriers" parent="." instance=ExtResource("3_5eas0")]
-position = Vector2(1000, 10)
-scale = Vector2(100, 1)
-
-[node name="barriers2" parent="." instance=ExtResource("3_5eas0")]
-position = Vector2(1991, 1003)
-scale = Vector2(1, 100)
-
-[node name="barriers3" parent="." instance=ExtResource("3_5eas0")]
-position = Vector2(6, 1001)
-scale = Vector2(1, 100)
-
-[node name="barriers4" parent="." instance=ExtResource("3_5eas0")]
-position = Vector2(1004, 1991)
-scale = Vector2(100, 1)
-
 [node name="Player" parent="." instance=ExtResource("3_jyohp")]
-position = Vector2(565, 1502)
+position = Vector2(957, 540)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(1330, 769)
-shape = SubResource("CircleShape2D_t6pq5")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
-position = Vector2(1330, 780)
-sprite_frames = SubResource("SpriteFrames_v72j1")
+[node name="Camera2D" type="Camera2D" parent="Player"]
