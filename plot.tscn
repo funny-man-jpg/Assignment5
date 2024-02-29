@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://plot.gd" id="1_m2jl3"]
 [ext_resource type="Texture2D" uid="uid://bmsifvxwx4j8j" path="res://Assets/Construction.png" id="2_owqp6"]
-[ext_resource type="Texture2D" uid="uid://pxai2ceusmus" path="res://Assets/Screenshot_2024-02-28_204520.png" id="3_ik0h2"]
+[ext_resource type="Texture2D" uid="uid://pxai2ceusmus" path="res://Assets/Screenshot_2024-02-28_204520.png" id="3_1xp3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarfv"]
 size = Vector2(58, 54.5)
@@ -14,7 +14,7 @@ animations = [{
 "texture": ExtResource("2_owqp6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ik0h2")
+"texture": ExtResource("3_1xp3d")
 }],
 "loop": true,
 "name": &"default",

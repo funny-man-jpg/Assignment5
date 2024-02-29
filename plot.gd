@@ -16,3 +16,4 @@ func _process(delta):
 func _on_area_entered(area):
 	build.emit()
 	$AnimatedSprite2D.set_frame(1)
+
