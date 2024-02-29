@@ -1,19 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8e8vai4js1l5"]
+[gd_scene load_steps=6 format=3 uid="uid://c8e8vai4js1l5"]
 
 [ext_resource type="Script" path="res://store.gd" id="1_cox8u"]
-[ext_resource type="Texture2D" uid="uid://rgc2fqjbhy16" path="res://icon.svg" id="2_wgxg3"]
+[ext_resource type="Texture2D" uid="uid://b32acpbfpj4o7" path="res://Assets/WoodShop.png" id="2_jfttc"]
+[ext_resource type="Texture2D" uid="uid://dumswvebw5m00" path="res://Assets/BrickShop.png" id="3_i0uro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gn3pg"]
+size = Vector2(22, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2f5bm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jfttc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i0uro")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="store" type="Area2D"]
+scale = Vector2(8.6358, 8.18824)
 script = ExtResource("1_cox8u")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_gn3pg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9.53674e-07, 0)
-scale = Vector2(0.644531, 0.589844)
-texture = ExtResource("2_wgxg3")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.226069, -3.08229)
+scale = Vector2(0.0457072, 0.0503582)
+sprite_frames = SubResource("SpriteFrames_2f5bm")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

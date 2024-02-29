@@ -15,19 +15,22 @@ func _ready():
 	plots = get_tree().get_nodes_in_group("Plots")
 	for i in plots:
 		i.connect("build", plot_built)
-	$Timer.start()
+	$moneyTimer.start()
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if woodCount < 3 and stoneCount < 1:
+	if woodCount < 3 or stoneCount < 1:
 		buildable = false
 	else:
 		buildable = true
 	for i in plots:
 		i.set_buildable(buildable)
 	#print(buildable)
+	$Player/Camera2D/Money.text = "Money: " + str(money)
+	$Player/Camera2D/Wood.text = "Wood: " + str(woodCount)
+	$Player/Camera2D/Stone.text = "Stone: " + str(stoneCount)
 
 
 func plot_built(houseType):
@@ -62,6 +65,6 @@ func _on_timer_timeout():
 
 
 func _on_stone_store_area_entered(area):
-	if money > 0:
+	if money > 1:
 		money -= 2
 		stoneCount += 1
