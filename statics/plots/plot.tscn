@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://statics/plots/plot.gd" id="1_ww5ba"]
 [ext_resource type="Texture2D" uid="uid://bmsifvxwx4j8j" path="res://Assets/Construction.png" id="2_2mfpv"]
-[ext_resource type="Texture2D" uid="uid://pxai2ceusmus" path="res://Assets/Screenshot_2024-02-28_204520.png" id="3_w5rsk"]
+[ext_resource type="Texture2D" uid="uid://bg81t6i5xsy16" path="res://Assets/image_3.png" id="3_6jq3q"]
 [ext_resource type="AudioStream" uid="uid://d27ge5p5hbbjl" path="res://Assets/cash-register-purchase-87313.mp3" id="4_kbiya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iarfv"]
@@ -15,7 +15,7 @@ animations = [{
 "texture": ExtResource("2_2mfpv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_w5rsk")
+"texture": ExtResource("3_6jq3q")
 }],
 "loop": true,
 "name": &"default",

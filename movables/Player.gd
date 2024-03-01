@@ -23,20 +23,27 @@ func _process(delta):
 		if Input.is_action_pressed("move_up"):
 			velocity.y -= 1
 			#apply_central_impulse(Vector2(0, -(speed * delta)))
-		
-		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+		$walk.play()
 	else:
-		$AnimatedSprite2D.stop()
+		$walk.stop()
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, get_viewport_rect().size)
+	if (stunned == true):
+		$walk.hide()
+		$stunned.show()
+		$stunned.play()
+	elif (stunned == false):
+		$walk.show()
+		$stunned.stop()
+		$stunned.hide()
 	# Old system moved your position, which let you literally clip through walls
 	
 func hitByCar():
 	stunned = true
 	$stunTimer.start()
+
 	
 
 

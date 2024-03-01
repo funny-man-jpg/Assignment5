@@ -1,7 +1,7 @@
 extends Node
 
 @export var cars: PackedScene
-var money = 10
+var money = 10.0
 var regularHouseCount = 0
 var doubleHouseCount = 0
 var threeHouseCount = 0
@@ -10,6 +10,10 @@ var stoneCount = 0
 var buildable = true
 var idSetter = 0
 var plots = []
+var time = 40
+var quota = 50.0
+var value = 0.0
+var cycles = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +21,7 @@ func _ready():
 	for i in plots:
 		i.connect("build", plot_built)
 	$moneyTimer.start()
+	$quotaTimer.start()
 
 
 
@@ -29,9 +34,12 @@ func _process(delta):
 	for i in plots:
 		i.set_buildable(buildable)
 	#print(buildable)
-	$Player/Camera2D/Money.text = "Money: " + str(money)
+	$Player/Camera2D/Money.text = "Money: $" + str(money)
 	$Player/Camera2D/Wood.text = "Wood: " + str(woodCount)
 	$Player/Camera2D/Stone.text = "Stone: " + str(stoneCount)
+	$Player/Camera2D/Timer.text = "Time: " + str(time) + " s"
+	$Player/Camera2D/Amount.text = "Quota: $" + str(quota)
+	$Player/Camera2D/Cycles.text = "Cycle:" + str(cycles)
 
 
 func plot_built(houseType):
@@ -64,7 +72,7 @@ func _on_timer_timeout():
 	print(woodCount)
 	print(stoneCount)
 	print(buildable)
-
+	print("value"+str(value))
 
 func _on_stone_store_body_entered(area):
 	if money > 1:
@@ -85,3 +93,19 @@ func _on_car_timer_timeout():
 	car.position = car_spawn_location.position
 	var direction = car_spawn_location.rotation + PI / 2
 	add_child(car)
+
+func _on_time_clock_timeout():
+	if(time>0):
+		time -= 1
+		print(time)
+	
+func _on_quota_progress_timeout():
+	value = (money/quota)*100/2
+	$Player/Camera2D/Quota.value = value
+	if(money>=quota):
+		quota*=4
+		cycles+=1
+		time=50-(5*cycles)
+	elif(time == 0):
+		money = 0
+		get_tree().reload_current_scene()

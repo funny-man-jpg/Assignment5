@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://be0fip56jwlr7"]
+
+[ext_resource type="Texture2D" uid="uid://cg5xuuii86op3" path="res://Assets/quota/quotaUnder.png" id="1_nu8ko"]
+[ext_resource type="Texture2D" uid="uid://gsjsxgbfh60y" path="res://Assets/quota/quotaOver.png" id="2_0nmdu"]
+[ext_resource type="Texture2D" uid="uid://b1um0oq5n54yt" path="res://Assets/quota/quotaProgress.png" id="3_0c0fh"]
+
+[sub_resource type="GDScript" id="GDScript_5di02"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Quota" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_under = ExtResource("1_nu8ko")
+texture_over = ExtResource("2_0nmdu")
+texture_progress = ExtResource("3_0c0fh")
+tint_progress = Color(0.141176, 0.466667, 0, 1)
+radial_fill_degrees = 0.0
+script = SubResource("GDScript_5di02")
